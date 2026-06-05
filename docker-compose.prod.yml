@@ -1,0 +1,13 @@
+services:
+  uetr-tracker:
+    build: .
+    image: uetr-tracker:latest
+    container_name: uetr-tracker
+    restart: unless-stopped
+    ports:
+      - "8090:3000"
+    env_file: .env
+    volumes:
+      - uetr-data:/data
+volumes:
+  uetr-data:
